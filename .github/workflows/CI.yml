@@ -50,6 +50,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build with Maven
         run: mvn -B package -Dmaven.test.skip=true --file pom.xml
+      - name: check jar file
+        run: test -f ./target/*.jar
         
   test:
     needs: dependancies
