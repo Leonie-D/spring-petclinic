@@ -90,4 +90,5 @@ jobs:
       - run: |
           # Ping the server
           jfrog rt ping
+          # Save .jar on artifactory
           jfrog rt u ./*.jar default-generic-local/petclinic/petclinic.jar --flat=true
