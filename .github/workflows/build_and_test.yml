@@ -55,6 +55,11 @@ jobs:
       - name: check jar file
         run: test -f ./target/*.jar
         
+      - uses: actions/upload-artifact@v2
+        with:
+          name: petclinic_jarfile
+          path: ./target/*.jar
+        
   test:
     needs: dependancies
     runs-on: ubuntu-latest
