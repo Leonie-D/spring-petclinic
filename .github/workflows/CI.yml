@@ -86,11 +86,11 @@ jobs:
       - name: Build with Maven
         run: mvn -B package -Dmaven.test.skip=true --file pom.xml
  
-      - uses: jfrog/setup-jfrog-cli@v1
+      - uses: jfrog/setup-jfrog-cli@v2
         env:
           JF_ARTIFACTORY_1: ${{ secrets.ARTIFACTORY_TOKEN }}
       - run: |
-          jfrog rt use leonie
+          # jfrog rt use leonie
           # Ping the server
           jfrog rt ping
-          jfrog rt u ./target/*.jar artifacts/
+          jfrog rt u ./target/*.jar artifacts/ --access-token ${{ secrets.ARTIFACTORY_TOKEN }}
