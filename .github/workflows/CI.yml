@@ -92,4 +92,4 @@ jobs:
       - run: |
           # Ping the server
           jfrog rt ping
-          jfrog rt u ./target/*.jar "default-generic-local"
+          jfrog rt u ./target/*.jar default-generic-local/petclinic/petclinic.jar --flat=true
