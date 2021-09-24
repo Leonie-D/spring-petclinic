@@ -93,4 +93,4 @@ jobs:
           jfrog rt use leonie
           # Ping the server
           jfrog rt ping
-          jfrog rt u ./target/*.jar artifacts/ --access-token ${{ secrets.ARTIFACTORY_TOKEN }}
+          jfrog rt u ./target/*.jar artifacts/ --url https://leonie.jfrog.io --access-token ${{ secrets.ARTIFACTORY_TOKEN }}
