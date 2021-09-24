@@ -6,7 +6,8 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches:  
+      - '**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,7 +30,7 @@ jobs:
           cache: 'maven'
             # Runs a single command using the runners shell
       - name: Get maven dependancies
-        run: mvn -B compile --file pom.xml
+        run: mvn dependency:go-offline
 
   build:
     needs: dependancies
@@ -77,6 +78,8 @@ jobs:
   save:
     needs: [build, test]
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
     steps:
       - uses: actions/download-artifact@v2
         with:
