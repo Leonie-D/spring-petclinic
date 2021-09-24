@@ -90,6 +90,9 @@ jobs:
         env:
           JF_ARTIFACTORY_1: ${{ secrets.ARTIFACTORY_TOKEN }}
       - run: |
-          jfrog rt use leonie
+          jfrog -v
+          jfrog c add
+          jfrog c export leonie
+          # jfrog rt use leonie
           # Ping the server
-          jfrog rt ping
+          # jfrog rt ping
