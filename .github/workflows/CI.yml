@@ -88,7 +88,7 @@ jobs:
  
       - uses: jfrog/setup-jfrog-cli@v1
         env:
-          JF_ARTIFACTORY_1: ${{ secrets.artifactory_token }}
+          JF_ARTIFACTORY_1: ${{ secrets.ARTIFACTORY_TOKEN }}
       - run: |
           jfrog rt use leonie
           # Ping the server
