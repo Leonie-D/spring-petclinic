@@ -27,8 +27,8 @@ jobs:
           cache: 'maven'
       - name: Download maven dependencies
         run: |
-          mvn dependency:go-offline
           echo "${{ github.event.inputs.githash }}"
+          mvn dependency:go-offline
  
   build:
     needs: dependencies
