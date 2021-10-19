@@ -28,6 +28,7 @@ jobs:
       - name: Download maven dependencies
         run: |
           echo ${{ github.event.inputs.githash }}
+          echo $GITHUB_SHA
           mvn dependency:go-offline
  
   build:
