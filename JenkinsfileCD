@@ -9,8 +9,9 @@ pipeline {
                     spec: """{
                             "files": [
                                     {
-                                        "pattern": "spring-*.jar",
+                                        "pattern": "*.jar",
                                         "target": "default-maven-local"
+                                        "exclusions": ["petclinic/"]
                                     }
                                 ]
                             }"""
