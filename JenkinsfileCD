@@ -10,8 +10,7 @@ pipeline {
                             "files": [
                                     {
                                         "pattern": "*.jar",
-                                        "target": "default-maven-local",
-                                        "exclusions": ["petclinic/"]
+                                        "target": "default-maven-local/test",
                                     }
                                 ]
                             }"""
