@@ -14,14 +14,14 @@ pipeline {
                 rtUpload (
                     // Obtain an Artifactory server instance, defined in Jenkins --> Manage Jenkins --> Configure System:
                     serverId: 'leonie',
-                  //  spec: """{
-                    //        "files": [
-                      //              {
-                      //                  "pattern": "target/*.jar",
-                      //                  "target": "petclinic"
-                      //              }
-                      //          ]
-                      //      }"""
+                    spec: """{
+                            "files": [
+                                    {
+                                        "pattern": "target/*.jar",
+                                        "target": "default-maven-local"
+                                    }
+                                ]
+                            }"""
                 )
             }
         }
