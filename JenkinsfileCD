@@ -9,8 +9,8 @@ pipeline {
                     spec: """{
                             "files": [
                                     {
-                                        "pattern": "*.jar",
-                                        "target": "default-maven-local/test",
+                                        "pattern": "spring-petclinic-2.5.0-SNAPSHOT.jar",
+                                        "target": "default-maven-local",
                                     }
                                 ]
                             }"""
