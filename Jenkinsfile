@@ -4,7 +4,7 @@ pipeline {
         maven 'MAVEN_HOME'
     }
     stages {
-        stage('build') {
+        stage('Build & Test') {
             steps {
                 parallel(
                       test: {
