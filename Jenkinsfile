@@ -25,7 +25,7 @@ pipeline {
                             "files": [
                                     {
                                         "pattern": "target/*.jar",
-                                        "target": "default-maven-local"
+                                        "target": "default-maven-local/test"
                                     }
                                 ]
                             }"""
