@@ -6,7 +6,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn -B package -Dmaven.test.skip=true --file pom.xml' 
+                parallel(
+                      test: {
+                        sh 'mvn -B test --file pom.xml' 
+                      },
+                      build: {
+                        sh 'mvn -B package -Dmaven.test.skip=true --file pom.xml' 
+                      }
+                    )
             }
         }
         stage ('Upload file') {
