@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage ('Download file') {
+            steps {
+                rtDownload (
+                    // Obtain an Artifactory server instance, defined in Jenkins --> Manage Jenkins --> Configure System:
+                    serverId: 'leonie',
+                    spec: """{
+                            "files": [
+                                    {
+                                        "pattern": "*.jar",
+                                        "target": "default-maven-local"
+                                    }
+                                ]
+                            }"""
+                )
+            }
+        }
+    }
+}
