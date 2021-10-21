@@ -9,7 +9,7 @@ pipeline {
                     spec: """{
                             "files": [
                                     {
-                                        "pattern": "*.jar",
+                                        "pattern": "default-maven-local/*.jar",
                                         "target": "default-maven-local"
                                     }
                                 ]
