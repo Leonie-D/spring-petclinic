@@ -19,17 +19,18 @@ pipeline {
         }
         stage('Deploy') {
             steps([$class: 'BapSshPromotionPublisherPlugin']) {
-            sshPublisher(
-                continueOnError: false, failOnError: true,
-                publishers: [
-                    sshPublisherDesc(
-                        verbose: true,
-                        transfers: [
-                            sshTransfer(sourceFiles: "artifacts/*.jar",)
-                        ]
-                    )
-                ]
-            )
+                sshPublisher(
+                    continueOnError: false, failOnError: true,
+                    publishers: [
+                        sshPublisherDesc(
+                            verbose: true,
+                            transfers: [
+                                sshTransfer(sourceFiles: "artifacts/*.jar",)
+                            ]
+                        )
+                    ]
+                )
+            }
         }
     }
 }
