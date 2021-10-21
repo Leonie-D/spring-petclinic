@@ -10,11 +10,27 @@ pipeline {
                             "files": [
                                     {
                                         "pattern": "default-maven-local/*.jar",
-                                        "target": "default-maven-local"
+                                        "target": "artifacts"
                                     }
                                 ]
                             }"""
                 )
+            }
+        }
+        stage('Deploy') {
+            script {
+              sshPublisher(
+                continueOnError: false, failOnError: true,
+                publishers: [
+                    sshPublisherDesc(
+                        transfers: [
+                            sshTransfer(
+                                sourceFiles: "artifacts/*.jar",
+                                removePrefix: "artifacts",
+                                execCommand: ""
+                            )
+                        ])
+                    ])
             }
         }
     }
