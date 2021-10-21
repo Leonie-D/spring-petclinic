@@ -25,7 +25,7 @@ pipeline {
                             "files": [
                                     {
                                         "pattern": "target/*.jar",
-                                        "target": "default-maven-local/jenkins/petclinic-${GIT_COMMIT.substring(0,8)}.jar"
+                                        "target": "default-maven-local/petclinic-${GIT_COMMIT.substring(0,8)}.jar"
                                     }
                                 ]
                             }"""
