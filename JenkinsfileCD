@@ -23,6 +23,7 @@ pipeline {
                     continueOnError: false, failOnError: true,
                     publishers: [
                         sshPublisherDesc(
+                            configName: "VM AWS",
                             verbose: true,
                             transfers: [
                                 sshTransfer(sourceFiles: "artifacts/*.jar",)
