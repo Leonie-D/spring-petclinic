@@ -9,8 +9,8 @@ pipeline {
                     spec: """{
                             "files": [
                                     {
-                                        "pattern": "default-maven-local/jenkins/petclinic-${GIT_COMMIT.substring(0,8)}.jar",
-                                        "target": "jenkins/petclinic.jar"
+                                        "pattern": "default-maven-local/petclinic-${GIT_COMMIT.substring(0,8)}.jar",
+                                        "target": "petclinic.jar"
                                     }
                                 ]
                             }"""
@@ -27,7 +27,7 @@ pipeline {
                             verbose: true,
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: "**/*.jar",
+                                    sourceFiles: "petclinic.jar",
                                     execCommand: "sudo systemctl start petclinic@group2.service && sudo systemctl start petclinic@group2.service"
                                 )
                             ]
