@@ -4,6 +4,14 @@ pipeline {
         maven 'MAVEN_HOME'
     }
     stages {
+        stage('Cleanup Workspace') { 
+            steps {
+                cleanWs()
+                sh """
+                echo "Cleaned Up Workspace For Project"
+                """
+            }
+        }
         stage('Build & Test') {
             steps {
                 parallel(
