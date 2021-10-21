@@ -9,7 +9,7 @@ pipeline {
                     spec: """{
                             "files": [
                                     {
-                                        "pattern": "default-maven-local/*.jar",
+                                        "pattern": "default-maven-local/jenkins/petclinic-${GIT_COMMIT.substring(0,8)}.jar",
                                         "target": "petclinic.jar"
                                     }
                                 ]
