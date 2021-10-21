@@ -27,10 +27,10 @@ pipeline {
                             verbose: true,
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: "*.jar",
+                                    sourceFiles: "artifacts/*.jar",
                                     removePrefix: "artifacts",
-                                    //remoteDirectory: "",
-                                    execCommand: "ls"
+                                    remoteDirectory: "/",
+                                    execCommand: "sudo systemctl stop petclinic@group2.service && sudo systemctl start petclinic@group2.service"
                                 )
                             ]
                         )
