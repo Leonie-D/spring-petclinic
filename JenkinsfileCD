@@ -9,7 +9,8 @@ pipeline {
                     spec: """{
                             "files": [
                                     {
-                                        "pattern": "default-maven-local/*.jar"
+                                        "pattern": "default-maven-local/*.jar",
+                                        "target": "petclinic.jar"
                                     }
                                 ]
                             }"""
@@ -27,7 +28,7 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: "*.jar",
-                                    execCommand: "sudo systemctl start petclinic@group2.service"
+                                    execCommand: "sudo systemctl start petclinic@group2.service && sudo systemctl start petclinic@group2.service"
                                 )
                             ]
                         )
