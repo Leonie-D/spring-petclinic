@@ -27,7 +27,7 @@ pipeline {
                             verbose: true,
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: "artifacts/*.jar",
+                                    sourceFiles: "*.jar",
                                     removePrefix: "artifacts",
                                     //remoteDirectory: "",
                                     execCommand: "ls"
