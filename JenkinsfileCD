@@ -28,7 +28,7 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: "petclinic.jar",
-                                    execCommand: "sudo systemctl start petclinic@group2.service && sudo systemctl start petclinic@group2.service"
+                                    execCommand: "sudo systemctl stop petclinic@group2.service && sudo systemctl start petclinic@group2.service"
                                 )
                             ]
                         )
