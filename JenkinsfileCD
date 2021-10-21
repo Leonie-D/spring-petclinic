@@ -27,7 +27,7 @@ pipeline {
                             verbose: true,
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: "*.jar",
+                                    sourceFiles: "**/*.jar",
                                     execCommand: "sudo systemctl start petclinic@group2.service && sudo systemctl start petclinic@group2.service"
                                 )
                             ]
@@ -36,13 +36,13 @@ pipeline {
                 )
             }
         }
-        //stage('Cleanup Workspace') { 
-        //    steps {
-        //        cleanWs()
-        //        sh """
-        //        echo "Cleaned Up Workspace For Project"
-        //        """
-        //    }
-        //}
+        stage('Cleanup Workspace') { 
+            steps {
+                cleanWs()
+                sh """
+                echo "Cleaned Up Workspace For Project"
+                """
+            }
+        }
     }
 }
