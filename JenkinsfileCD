@@ -26,7 +26,12 @@ pipeline {
                             configName: "VM AWS",
                             verbose: true,
                             transfers: [
-                                sshTransfer(sourceFiles: "artifacts/*.jar",)
+                                sshTransfer(
+                                    sourceFiles: "artifacts/*.jar",
+                                    removePrefix: "artifacts",
+                                    //remoteDirectory: "",
+                                    execCommand: "ls"
+                                )
                             ]
                         )
                     ]
