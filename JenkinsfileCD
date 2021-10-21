@@ -10,7 +10,7 @@ pipeline {
                             "files": [
                                     {
                                         "pattern": "spring-petclinic-2.5.0-SNAPSHOT.jar",
-                                        "target": "default-maven-local",
+                                        "target": "default-maven-local"
                                     }
                                 ]
                             }"""
